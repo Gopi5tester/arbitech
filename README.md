@@ -1,12 +1,12 @@
 * Aout the code
-* ├── src/
+* ├── src code
 * │   ├── CPU.v
 * │   ├── ALU.v
 * │   ├── RegisterFile.v
 * │   ├── MemoryInterface.v
 * │   ├── ControlUnit.v
 * │   └── TopLevelCPU.v
-* ├── test/
+* ├── testbench code
 * │   ├── test_CPU.v
 * │   ├── test_ALU.v
 * │   └── test_RegisterFile.v
