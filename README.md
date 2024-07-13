@@ -12,6 +12,9 @@
 * │   └── test_RegisterFile.v
 * └── docs/
     └── architecture_specification.md
+* ![Screenshot 2024-07-13 201803](https://github.com/user-attachments/assets/695f03de-460f-42e2-9737-00d0d02249b9)
+* ![image](https://github.com/user-attachments/assets/fe69f560-f3de-4aae-8a2c-4d5073ac943b)
+
 * This test bench only implements single block of codes if you want the know about one block easily copy the module test represent in the verilog test code and run the block of code .
 This Verilog CPU design integrates several modules to form a simple, 19-bit CPU. The `TopLevelCPU` module connects the `CPU`, `RegisterFile`, `ALU`, `MemoryInterface`, and `ControlUnit`.
 The `CPU` module manages the Program Counter (PC) and instruction flow. It updates the PC and registers based on opcode operations like ADD, SUB, MUL, DIV, and JMP.
