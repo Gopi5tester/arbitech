@@ -1,16 +1,16 @@
 * Aout the code
 * ├── src/
-*│   ├── CPU.v
-*│   ├── ALU.v
-*│   ├── RegisterFile.v
-*│   ├── MemoryInterface.v
-*│   ├── ControlUnit.v
-*│   └── TopLevelCPU.v
-*├── test/
-*│   ├── test_CPU.v
-*│   ├── test_ALU.v
-*│   └── test_RegisterFile.v
-*└── docs/
+* │   ├── CPU.v
+* │   ├── ALU.v
+* │   ├── RegisterFile.v
+* │   ├── MemoryInterface.v
+* │   ├── ControlUnit.v
+* │   └── TopLevelCPU.v
+* ├── test/
+* │   ├── test_CPU.v
+* │   ├── test_ALU.v
+* │   └── test_RegisterFile.v
+* └── docs/
     └── architecture_specification.md
 * This test bench only implements single block of codes if you want the know about one block easily copy the module test represent in the verilog test code and run the block of code .
 This Verilog CPU design integrates several modules to form a simple, 19-bit CPU. The `TopLevelCPU` module connects the `CPU`, `RegisterFile`, `ALU`, `MemoryInterface`, and `ControlUnit`.
