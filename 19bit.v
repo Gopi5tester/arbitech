@@ -9,8 +9,6 @@ module TopLevelCPU (
     wire [18:0] alu_result;
     wire [3:0] opcode, rd, rs1, rs2;
     wire [18:0] imm;
-
-    // CPU instance
     CPU cpu (
         .clk(clk),
         .reset(reset),
@@ -18,8 +16,6 @@ module TopLevelCPU (
         .pc(pc),
         .result(result)
     );
-
-    // Register File instance
     RegisterFile reg_file (
         .clk(clk),
         .read_reg1(rs1),
@@ -30,26 +26,20 @@ module TopLevelCPU (
         .read_data1(read_data1),
         .read_data2(read_data2)
     );
-
-    // ALU instance
     ALU alu (
         .opcode(opcode),
         .a(read_data1),
         .b(read_data2),
         .result(alu_result)
     );
-
-    // Memory Interface instance
     MemoryInterface mem_if (
         .clk(clk),
         .address(pc),
         .write_data(alu_result),
-        .mem_write(1'b0), // This should be controlled by control unit
+        .mem_write(1'b0), 
         .mem_read(1'b1),
         .read_data(instruction)
     );
-
-    // Control Unit instance
     ControlUnit control (
         .instruction(instruction),
         .opcode(opcode),
@@ -59,7 +49,6 @@ module TopLevelCPU (
         .imm(imm)
     );
 endmodule
-
 module CPU (
     input clk,
     input reset,
@@ -158,7 +147,7 @@ module MemoryInterface (
     input mem_read,
     output [18:0] read_data
 );
-    reg [18:0] memory [0:524287]; // 2^19 memory locations
+    reg [18:0] memory [0:524287]; // 2^19 
 
     always @(posedge clk) begin
         if (mem_write) begin
