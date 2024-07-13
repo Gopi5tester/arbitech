@@ -3,8 +3,6 @@ module testbench;
     reg reset;
     wire [18:0] pc;
     wire [18:0] result;
-
-    // Instantiate the TopLevelCPU
     TopLevelCPU dut (
         .clk(clk),
         .reset(reset),
@@ -12,27 +10,22 @@ module testbench;
         .result(result)
     );
 
-    // Clock generation
     initial begin
         clk = 0;
-        forever #5 clk = ~clk; // 10 time units period
+        forever #5 clk = ~clk; 
     end
 
-    // Test sequence
     initial begin
-        // Initialize signals
+     
         reset = 1;
         #10;
         reset = 0;
         #100;
 
-        // Add more tests here if necessary
-        #1000; // Run simulation for a while
+        #500; 
 
-        $stop; // Stop simulation
+        $stop;
     end
-
-    // Monitor signals
     initial begin
         $monitor("Time = %0t, PC = %h, Result = %h", $time, pc, result);
     end
@@ -134,18 +127,13 @@ module RegisterFile_tb;
     end
 
     initial begin
-        // Initialize and write to register 1
         reg_write = 1;
         write_reg = 4'd1;
         write_data = 19'd10;
         #10;
-
-        // Write to register 2
         write_reg = 4'd2;
         write_data = 19'd20;
         #10;
-
-        // Read from registers 1 and 2
         reg_write = 0;
         read_reg1 = 4'd1;
         read_reg2 = 4'd2;
@@ -177,14 +165,11 @@ module MemoryInterface_tb;
     end
 
     initial begin
-        // Write to memory
         address = 19'd0;
         write_data = 19'd42;
         mem_write = 1;
         mem_read = 0;
         #10;
-
-        // Read from memory
         mem_write = 0;
         mem_read = 1;
         #10;
@@ -210,10 +195,8 @@ module ControlUnit_tb;
     );
 
     initial begin
-        // Test instruction
         instruction = 19'b0001000100010001000;
         #10;
-
         $stop;
     end
 endmodule
