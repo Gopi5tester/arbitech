@@ -22,7 +22,7 @@ module TopLevelCPU (
         .read_reg2(rs2),
         .write_reg(rd),
         .write_data(alu_result),
-        .reg_write(1'b1),  // This should be controlled by control unit
+        .reg_write(1'b1), 
         .read_data1(read_data1),
         .read_data2(read_data2)
     );
