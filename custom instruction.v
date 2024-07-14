@@ -2,21 +2,21 @@ module FFT (
     input [18:0] data_in,
     output [18:0] data_out
 );
-    assign data_out = data_in + 19'h1; // Simplified for example
+    assign data_out = data_in + 19'h1; 
 endmodule
 
 module ENC (
     input [18:0] data_in,
     output [18:0] data_out
 );
-    assign data_out = data_in ^ 19'hAAAAA; // Simplified for example
+    assign data_out = data_in ^ 19'hAAAAA; 
 endmodule
 
 module DEC (
     input [18:0] data_in,
     output [18:0] data_out
 );
-    assign data_out = data_in ^ 19'hAAAAA; // Simplified for example
+    assign data_out = data_in ^ 19'hAAAAA; 
 endmodule
 
 module ALU (
@@ -34,15 +34,10 @@ module ALU (
     DEC dec_inst (.data_in(b), .data_out(dec_out));
 
     always @(*) begin
-        case (opcode)
-            5'b00000: result = a + b; // ADD
-            5'b00001: result = a - b; // SUB
-            5'b00010: result = a & b; // AND
-            5'b00011: result = a | b; // OR
-            5'b00100: result = a ^ b; // XOR
-            5'b10000: result = fft_out; // Custom instruction FFT
-            5'b10001: result = enc_out; // Custom instruction ENC
-            5'b10010: result = dec_out; // Custom instruction DEC
+        case (opcode) 
+            5'b10000: result = fft_out; 
+            5'b10001: result = enc_out; 
+            5'b10010: result = dec_out; 
             default: result = 19'b0;
         endcase
     end
