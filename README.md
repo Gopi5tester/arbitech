@@ -12,8 +12,7 @@
 * │   └── test_RegisterFile.v
 * └── docs/
     └── architecture_specification.md
-* ![Screenshot 2024-07-13 201803](https://github.com/user-attachments/assets/695f03de-460f-42e2-9737-00d0d02249b9)
-* ![image](https://github.com/user-attachments/assets/8f3f91a5-2311-48a8-bd79-0b6a1c1e2775)
+
 
 
 * This test bench only implements single block of codes if you want the know about one block easily copy the module test represent in the verilog test code and run the block of code .
